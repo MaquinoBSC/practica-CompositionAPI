@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Contador: {{ contador }}</h1>
+    <button @click="disminuir()">Disminuir</button>
+    <button @click="aumentar()">Aumentar</button>
   </div>
 </template>
 
@@ -10,9 +11,18 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      contador: 0
+    }
+  },
+  methods: {
+    disminuir(){
+      this.contador= this.contador - 1;
+    },
+    aumentar(){
+      this.contador= this.contador + 1;
+    }
   }
 }
 </script>
